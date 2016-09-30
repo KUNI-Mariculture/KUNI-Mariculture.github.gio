@@ -6,6 +6,70 @@ output:
     highlight: tango
 ---
 
-##Maping mariculture
+##Maping mariculture variables
 
+```{r, echo=FALSE, warning=FALSE}
+
+suppressPackageStartupMessages({
+  library(readr)
+  library(dplyr)
+  library(tidyr)
+  library(ggplot2)
+  library(knitr)
+})
+
+```
+
+
+```{r}
+setwd("~/KUNI/KUNI-Mariculture.github.io")
+
+#read cvs always as read_csv (instead of read.csv) to get a tibble, it keep the data without factors
+
+x <- read_csv(file='data_normalized_092616.csv')
+
+#This is the file with the matching column "FAO_Country"
+
+conversion <- read_csv(file="CountryConversion.csv")
+
+# Fix names to common:
+  
+# have to make sure country names line up
+#PD_names <- select(PD,country) %>% rename(PDname=country) %>% arrange(PDname) %>% distinct()
+#write.csv(PD_names,file=paste0(W_D,"/data/nameconversion/PD_names.csv"),row.names=F)
+#names_conv <- read.csv(paste0(W_D,"/data/nameconversion/name_conversion.csv"),stringsAsFactors = F)
+
+```
+
+
+# The Geo chart is displayed in a window's browser when you run this chunk
+
+
+```{r Maping IUCN Category Index per Country}
+
+#Geo chart
+
+x2 <- x %>% 
+   filter(!is.na(gdp)) %>%
+  rename(FAO_Country=country) %>%             #rename match column FAO_Country
+  left_join(                                  #joining harvest_countries with conversion data 
+    conversion, 
+    by = c("FAO_Country")) %>%
+    select(FAO_Country, gdp)
+  
+  
+  #group_by(FAO_Country) %>%                        #grouping by country
+   #summarise(
+    # harvest = round(sum(value),digits=1), n_species = n()) #getting sum per country and n species harvested
+
+# Plot countries
+#install.packages("googleVis")
+suppressWarnings(suppressMessages(library(googleVis))) 
+
+#### Create a geo chart
+#Q.balance in all countries
+G1 <- gvisGeoChart(x2, "FAO_Country", "gdp", hovervar="FAO_Country",
+                options=list(gvis.editor="S&P"))
+plot(G1)
+```
 

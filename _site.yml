@@ -1,6 +1,6 @@
-name: "my-website"
+name: "Mariculture"
 navbar:
-  title: "My Website"
+  title: "Mariculture"
   left:
     - text: "Home"
       href: index.html
