@@ -21,49 +21,6 @@
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-pre, code { background-color: #f8f8f8; }
-code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
-code > span.dt { color: #204a87; } /* DataType */
-code > span.dv { color: #0000cf; } /* DecVal */
-code > span.bn { color: #0000cf; } /* BaseN */
-code > span.fl { color: #0000cf; } /* Float */
-code > span.ch { color: #4e9a06; } /* Char */
-code > span.st { color: #4e9a06; } /* String */
-code > span.co { color: #8f5902; font-style: italic; } /* Comment */
-code > span.ot { color: #8f5902; } /* Other */
-code > span.al { color: #ef2929; } /* Alert */
-code > span.fu { color: #000000; } /* Function */
-code > span.er { color: #a40000; font-weight: bold; } /* Error */
-code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #000000; } /* Constant */
-code > span.sc { color: #000000; } /* SpecialChar */
-code > span.vs { color: #4e9a06; } /* VerbatimString */
-code > span.ss { color: #4e9a06; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #000000; } /* Variable */
-code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
-code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code > span.ex { } /* Extension */
-code > span.at { color: #c4a000; } /* Attribute */
-code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
-code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
-</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 
 
 <style type="text/css">
@@ -226,76 +183,8 @@ $(document).ready(function () {
 </div>
 
 
-<div id="maping-mariculture-harvest-in-the-world-data-from-httpsgithub.comohi-scienceohi-global" class="section level2">
-<h2>Maping mariculture harvest in the world (data from, <a href="https://github.com/OHI-Science/ohi-global" class="uri">https://github.com/OHI-Science/ohi-global</a>)</h2>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(<span class="st">&quot;~/KUNI/KUNI-Mariculture.github.gio&quot;</span>)
-
-<span class="co">#read cvs always as read_csv (instead of read.csv) to get a tibble, it keep the data without factors</span>
-
-x &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file=</span><span class="st">&#39;data_normalized_092616.csv&#39;</span>)</code></pre></div>
-<pre><code>## Warning: Missing column names filled in: &#39;X1&#39; [1]</code></pre>
-<pre><code>## Parsed with column specification:
-## cols(
-##   .default = col_double(),
-##   X1 = col_integer(),
-##   country = col_character(),
-##   year = col_integer()
-## )</code></pre>
-<pre><code>## See spec(...) for full column specifications.</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#This is the file with the matching column &quot;FAO_Country&quot;</span>
-
-conversion &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file=</span><span class="st">&quot;CountryConversion.csv&quot;</span>)</code></pre></div>
-<pre><code>## Parsed with column specification:
-## cols(
-##   ISO3 = col_character(),
-##   ISO2 = col_character(),
-##   ISO_Numeric = col_integer(),
-##   FAO_Country = col_character(),
-##   PythonOutput = col_character(),
-##   FAO_Region = col_character(),
-##   IUCN_Region = col_character(),
-##   Continent_Former_Republics_Excluded = col_character(),
-##   CIA_Name = col_character(),
-##   World_Bank_Country = col_character()
-## )</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Fix names to common:</span>
-  
-<span class="co"># have to make sure country names line up</span>
-<span class="co">#PD_names &lt;- select(PD,country) %&gt;% rename(PDname=country) %&gt;% arrange(PDname) %&gt;% distinct()</span>
-<span class="co">#write.csv(PD_names,file=paste0(W_D,&quot;/data/nameconversion/PD_names.csv&quot;),row.names=F)</span>
-<span class="co">#names_conv &lt;- read.csv(paste0(W_D,&quot;/data/nameconversion/name_conversion.csv&quot;),stringsAsFactors = F)</span></code></pre></div>
-</div>
-<div id="the-geo-chart-is-displayed-in-a-windows-browser-when-you-run-this-chunk" class="section level1">
-<h1>The Geo chart is displayed in a window’s browser when you run this chunk</h1>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Geo chart</span>
-
-x2 &lt;-<span class="st"> </span>x %&gt;%<span class="st"> </span>
-<span class="st">   </span><span class="kw">filter</span>(!<span class="kw">is.na</span>(gdp)) %&gt;%
-<span class="st">  </span><span class="kw">rename</span>(<span class="dt">FAO_Country=</span>country) %&gt;%<span class="st">             </span><span class="co">#rename match column FAO_Country</span>
-<span class="st">  </span><span class="kw">left_join</span>(                                  <span class="co">#joining harvest_countries with conversion data </span>
-    conversion, 
-    <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;FAO_Country&quot;</span>)) %&gt;%
-<span class="st">    </span><span class="kw">select</span>(FAO_Country, gdp)
-  
-  
-  <span class="co">#group_by(FAO_Country) %&gt;%                        #grouping by country</span>
-   <span class="co">#summarise(</span>
-    <span class="co"># harvest = round(sum(value),digits=1), n_species = n()) #getting sum per country and n species harvested</span>
-
-<span class="co"># Plot countries</span>
-<span class="co">#install.packages(&quot;googleVis&quot;)</span>
-<span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(googleVis))) 
-
-#### Create a geo chart
-<span class="co">#Q.balance in all countries</span>
-G1 &lt;-<span class="st"> </span><span class="kw">gvisGeoChart</span>(x2, <span class="st">&quot;FAO_Country&quot;</span>, <span class="st">&quot;gdp&quot;</span>, <span class="dt">hovervar=</span><span class="st">&quot;FAO_Country&quot;</span>,
-                <span class="dt">options=</span><span class="kw">list</span>(<span class="dt">gvis.editor=</span><span class="st">&quot;S&amp;P&quot;</span>))
-<span class="kw">plot</span>(G1)</code></pre></div>
-<pre><code>## starting httpd help server ...</code></pre>
-<pre><code>##  done</code></pre>
-</div>
-<div id="the-geo-chart-is-displayed-in-a-windows-browser-when-you-run-this-chunk-1" class="section level1">
-<h1>The Geo chart is displayed in a window’s browser when you run this chunk</h1>
+<div id="maping-mariculture" class="section level2">
+<h2>Maping mariculture</h2>
 </div>
 
 
