@@ -1,0 +1,1054 @@
+<!-- GeoChart generated in R 3.3.1 by googleVis 0.6.0 package -->
+<!-- Fri Sep 30 21:40:16 2016 -->
+
+
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataGeoChartID2d7c20844620 () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+ "Albania",
+"Albania",
+0.0675878631 
+],
+[
+ "Algeria",
+"Algeria",
+0.09295185104 
+],
+[
+ "Angola",
+"Angola",
+0.04742985596 
+],
+[
+ "Antigua and Barbuda",
+"Antigua and Barbuda",
+0.1450992994 
+],
+[
+ "Armenia",
+"Armenia",
+0.04633997077 
+],
+[
+ "Aruba",
+"Aruba",
+0.2651529622 
+],
+[
+ "Australia",
+"Australia",
+0.3082090452 
+],
+[
+ "Austria",
+"Austria",
+0.3251326027 
+],
+[
+ "Azerbaijan",
+"Azerbaijan",
+0.1133862621 
+],
+[
+ "Bahamas",
+"Bahamas",
+0.165153936 
+],
+[
+ "Bahrain",
+"Bahrain",
+0.2925806159 
+],
+[
+ "Bangladesh",
+"Bangladesh",
+0.01469809431 
+],
+[
+ "Barbados",
+"Barbados",
+0.1107443204 
+],
+[
+ "Belarus",
+"Belarus",
+0.1197472964 
+],
+[
+ "Belgium",
+"Belgium",
+0.3014345286 
+],
+[
+ "Belize",
+"Belize",
+0.05423283693 
+],
+[
+ "Benin",
+"Benin",
+0.008573014443 
+],
+[
+ "Bermuda",
+"Bermuda",
+0.4072455268 
+],
+[
+ "Bhutan",
+"Bhutan",
+0.04693322787 
+],
+[
+ "Bolivia",
+"Bolivia",
+0.03731452289 
+],
+[
+ "Bosnia and Herzegovina",
+"Bosnia and Herzegovina",
+0.06477813158 
+],
+[
+ "Botswana",
+"Botswana",
+0.09750689699 
+],
+[
+ "Brazil",
+"Brazil",
+0.1064701727 
+],
+[
+ "Brunei",
+"Brunei",
+0.5441785524 
+],
+[
+ "Bulgaria",
+"Bulgaria",
+0.1122536803 
+],
+[
+ "Burkina Faso",
+"Burkina Faso",
+0.006391745936 
+],
+[
+ "Burundi",
+"Burundi",
+0.0007161032597 
+],
+[
+ "Cote dIvoire",
+"Cote dIvoire",
+0.01445539823 
+],
+[
+ "Cabo Verde",
+"Cabo Verde",
+0.04142986945 
+],
+[
+ "Cambodia",
+"Cambodia",
+0.01521794333 
+],
+[
+ "Cameroon",
+"Cameroon",
+0.01496176413 
+],
+[
+ "Canada",
+"Canada",
+0.3067431309 
+],
+[
+ "Cayman Islands",
+"Cayman Islands",
+0.3691752004 
+],
+[
+ "Central African Republic",
+"Central African Republic",
+0.002071905456 
+],
+[
+ "Chad",
+"Chad",
+0.009328068926 
+],
+[
+ "Chile",
+"Chile",
+0.1471824408 
+],
+[
+ "China",
+"China",
+0.07416462735 
+],
+[
+ "Colombia",
+"Colombia",
+0.08149344983 
+],
+[
+ "Comoros",
+"Comoros",
+0.00547339594 
+],
+[
+ "Congo",
+"Congo",
+0.03756770584 
+],
+[
+ "Democratic Republic of the Congo",
+"Democratic Republic of the Congo",
+0 
+],
+[
+ "Costa Rica",
+"Costa Rica",
+0.0932956705 
+],
+[
+ "Croatia",
+"Croatia",
+0.149468578 
+],
+[
+ "Cuba",
+"Cuba",
+0.1371360214 
+],
+[
+ "Cyprus",
+"Cyprus",
+0.2424414028 
+],
+[
+ "Czech Republic",
+"Czech Republic",
+0.2096407274 
+],
+[
+ "Denmark",
+"Denmark",
+0.3198269966 
+],
+[
+ "Djibouti",
+"Djibouti",
+0.01622393358 
+],
+[
+ "Dominica",
+"Dominica",
+0.07170246059 
+],
+[
+ "Dominican Republic",
+"Dominican Republic",
+0.08058783389 
+],
+[
+ "Ecuador",
+"Ecuador",
+0.06973692194 
+],
+[
+ "Egypt",
+"Egypt",
+0.07081706932 
+],
+[
+ "El Salvador",
+"El Salvador",
+0.05228003233 
+],
+[
+ "Equatorial Guinea",
+"Equatorial Guinea",
+0.2706937737 
+],
+[
+ "Eritrea",
+"Eritrea",
+0.00594830124 
+],
+[
+ "Estonia",
+"Estonia",
+0.1748145884 
+],
+[
+ "Ethiopia",
+"Ethiopia",
+0.004105608751 
+],
+[
+ "Fiji",
+"Fiji",
+0.05145831133 
+],
+[
+ "Finland",
+"Finland",
+0.2968854752 
+],
+[
+ "France",
+"France",
+0.2749671724 
+],
+[
+ "Gabon",
+"Gabon",
+0.1234723817 
+],
+[
+ "Gambia",
+"Gambia",
+0.00685691343 
+],
+[
+ "Georgia",
+"Georgia",
+0.04273698261 
+],
+[
+ "Germany",
+"Germany",
+0.3110509864 
+],
+[
+ "Ghana",
+"Ghana",
+0.02107710619 
+],
+[
+ "Greece",
+"Greece",
+0.1944976903 
+],
+[
+ "Grenada",
+"Grenada",
+0.0794327803 
+],
+[
+ "Guatemala",
+"Guatemala",
+0.04630476486 
+],
+[
+ "Guinea",
+"Guinea",
+0.004245683343 
+],
+[
+ "Guinea-Bissau",
+"Guinea-Bissau",
+0.005968525913 
+],
+[
+ "Guyana",
+"Guyana",
+0.04089953356 
+],
+[
+ "Haiti",
+"Haiti",
+0.007080133902 
+],
+[
+ "Honduras",
+"Honduras",
+0.0285886998 
+],
+[
+ "Hungary",
+"Hungary",
+0.1646895176 
+],
+[
+ "Iceland",
+"Iceland",
+0.2916907303 
+],
+[
+ "India",
+"India",
+0.03047783413 
+],
+[
+ "Indonesia",
+"Indonesia",
+0.06182158392 
+],
+[
+ "Iran",
+"Iran",
+0.1298281727 
+],
+[
+ "Iraq",
+"Iraq",
+0.09445521845 
+],
+[
+ "Ireland",
+"Ireland",
+0.3375003652 
+],
+[
+ "Israel",
+"Israel",
+0.2243979976 
+],
+[
+ "Italy",
+"Italy",
+0.2643005297 
+],
+[
+ "Jamaica",
+"Jamaica",
+0.05890698373 
+],
+[
+ "Japan",
+"Japan",
+0.2524241519 
+],
+[
+ "Jordan",
+"Jordan",
+0.07996311619 
+],
+[
+ "Kazakhstan",
+"Kazakhstan",
+0.1509734435 
+],
+[
+ "Kenya",
+"Kenya",
+0.01502318721 
+],
+[
+ "Kiribati",
+"Kiribati",
+0.00780672403 
+],
+[
+ "South Korea",
+"South Korea",
+0.2300369362 
+],
+[
+ "Kuwait",
+"Kuwait",
+0.566976254 
+],
+[
+ "Kyrgyzstan",
+"Kyrgyzstan",
+0.01725464287 
+],
+[
+ "Laos",
+"Laos",
+0.02708832864 
+],
+[
+ "Latvia",
+"Latvia",
+0.1410775856 
+],
+[
+ "Lebanon",
+"Lebanon",
+0.1182933671 
+],
+[
+ "Lesotho",
+"Lesotho",
+0.01258648857 
+],
+[
+ "Liberia",
+"Liberia",
+0.0008651665951 
+],
+[
+ "Libya",
+"Libya",
+0.07794963757 
+],
+[
+ "Lithuania",
+"Lithuania",
+0.1642288444 
+],
+[
+ "Luxembourg",
+"Luxembourg",
+0.6775730092 
+],
+[
+ "Macedonia",
+"Macedonia",
+0.08257734252 
+],
+[
+ "Madagascar",
+"Madagascar",
+0.005651672693 
+],
+[
+ "Malawi",
+"Malawi",
+0.001059922712 
+],
+[
+ "Malaysia",
+"Malaysia",
+0.1591696798 
+],
+[
+ "Maldives",
+"Maldives",
+0.07872491672 
+],
+[
+ "Mali",
+"Mali",
+0.006826201889 
+],
+[
+ "Malta",
+"Malta",
+0.2064444799 
+],
+[
+ "Marshall Islands",
+"Marshall Islands",
+0.02163440831 
+],
+[
+ "Mauritania",
+"Mauritania",
+0.02065838054 
+],
+[
+ "Mauritius",
+"Mauritius",
+0.1165705246 
+],
+[
+ "Mexico",
+"Mexico",
+0.1132019928 
+],
+[
+ "Micronesia",
+"Micronesia",
+0.02092279942 
+],
+[
+ "Republic of Moldova",
+"Republic of Moldova",
+0.02668233704 
+],
+[
+ "Mongolia",
+"Mongolia",
+0.0619639057 
+],
+[
+ "Montenegro",
+"Montenegro",
+0.1018604453 
+],
+[
+ "Morocco",
+"Morocco",
+0.04591600169 
+],
+[
+ "Mozambique",
+"Mozambique",
+0.002507110471 
+],
+[
+ "Namibia",
+"Namibia",
+0.0599893783 
+],
+[
+ "Nepal",
+"Nepal",
+0.01067413332 
+],
+[
+ "Netherlands",
+"Netherlands",
+0.3428546603 
+],
+[
+ "New Zealand",
+"New Zealand",
+0.2371972198 
+],
+[
+ "Nicaragua",
+"Nicaragua",
+0.02701342244 
+],
+[
+ "Niger",
+"Niger",
+0.001423966838 
+],
+[
+ "Nigeria",
+"Nigeria",
+0.03455797478 
+],
+[
+ "Norway",
+"Norway",
+0.4653143102 
+],
+[
+ "Oman",
+"Oman",
+0.3135730781 
+],
+[
+ "Pakistan",
+"Pakistan",
+0.02775574287 
+],
+[
+ "Palau",
+"Palau",
+0.09300803069 
+],
+[
+ "Panama",
+"Panama",
+0.1190559122 
+],
+[
+ "Papua New Guinea",
+"Papua New Guinea",
+0.01294379114 
+],
+[
+ "Paraguay",
+"Paraguay",
+0.05159239343 
+],
+[
+ "Peru",
+"Peru",
+0.07311968587 
+],
+[
+ "Philippines",
+"Philippines",
+0.03847931428 
+],
+[
+ "Poland",
+"Poland",
+0.164066298 
+],
+[
+ "Portugal",
+"Portugal",
+0.1971179091 
+],
+[
+ "Qatar",
+"Qatar",
+1 
+],
+[
+ "Romania",
+"Romania",
+0.1273959684 
+],
+[
+ "Russian Federation",
+"Russian Federation",
+0.1644393308 
+],
+[
+ "Rwanda",
+"Rwanda",
+0.005843432562 
+],
+[
+ "Saint Kitts and Nevis",
+"Saint Kitts and Nevis",
+0.1494745705 
+],
+[
+ "Saint Lucia",
+"Saint Lucia",
+0.0743151888 
+],
+[
+ "Saint Vincent and the Grenadines",
+"Saint Vincent and the Grenadines",
+0.0693219416 
+],
+[
+ "Samoa",
+"Samoa",
+0.03785759283 
+],
+[
+ "Sao Tome and Principe",
+"Sao Tome and Principe",
+0.01665014985 
+],
+[
+ "Saudi Arabia",
+"Saudi Arabia",
+0.3509872262 
+],
+[
+ "Senegal",
+"Senegal",
+0.01154978678 
+],
+[
+ "Serbia",
+"Serbia",
+0.08954886244 
+],
+[
+ "Seychelles",
+"Seychelles",
+0.1643389565 
+],
+[
+ "Sierra Leone",
+"Sierra Leone",
+0.005674144552 
+],
+[
+ "Singapore",
+"Singapore",
+0.5567927563 
+],
+[
+ "Slovakia",
+"Slovakia",
+0.1838977141 
+],
+[
+ "Slovenia",
+"Slovenia",
+0.2089613282 
+],
+[
+ "Solomon Islands",
+"Solomon Islands",
+0.01018199959 
+],
+[
+ "South Africa",
+"South Africa",
+0.08744399825 
+],
+[
+ "Spain",
+"Spain",
+0.239048152 
+],
+[
+ "Sri Lanka",
+"Sri Lanka",
+0.06241334289 
+],
+[
+ "Sudan",
+"Sudan",
+0.02143216158 
+],
+[
+ "Suriname",
+"Suriname",
+0.1086334637 
+],
+[
+ "Swaziland",
+"Swaziland",
+0.05245756002 
+],
+[
+ "Sweden",
+"Sweden",
+0.3227865406 
+],
+[
+ "Switzerland",
+"Switzerland",
+0.4039960959 
+],
+[
+ "United Republic of Tanzania",
+"United Republic of Tanzania",
+0.01190858747 
+],
+[
+ "Thailand",
+"Thailand",
+0.09765670939 
+],
+[
+ "Timor-Leste",
+"Timor-Leste",
+0.01010035183 
+],
+[
+ "Togo",
+"Togo",
+0.004779015478 
+],
+[
+ "Tonga",
+"Tonga",
+0.03306059986 
+],
+[
+ "Trinidad and Tobago",
+"Trinidad and Tobago",
+0.2183358389 
+],
+[
+ "Tunisia",
+"Tunisia",
+0.07192118669 
+],
+[
+ "Turkey",
+"Turkey",
+0.1292626309 
+],
+[
+ "Turkmenistan",
+"Turkmenistan",
+0.08047472552 
+],
+[
+ "Tuvalu",
+"Tuvalu",
+0.02150631871 
+],
+[
+ "Uganda",
+"Uganda",
+0.007725825335 
+],
+[
+ "Ukraine",
+"Ukraine",
+0.05741410319 
+],
+[
+ "United Arab Emirates",
+"United Arab Emirates",
+0.4267930484 
+],
+[
+ "United Kingdom",
+"United Kingdom",
+0.2694608177 
+],
+[
+ "United States of America",
+"United States of America",
+0.3682710825 
+],
+[
+ "Uruguay",
+"Uruguay",
+0.1294955891 
+],
+[
+ "Uzbekistan",
+"Uzbekistan",
+0.02842989866 
+],
+[
+ "Vanuatu",
+"Vanuatu",
+0.01721419353 
+],
+[
+ "Venezuela",
+"Venezuela",
+0.1227323085 
+],
+[
+ "Viet Nam",
+"Viet Nam",
+0.03071079241 
+],
+[
+ "Yemen",
+"Yemen",
+0.02246511806 
+],
+[
+ "Zambia",
+"Zambia",
+0.02070632051 
+],
+[
+ "Zimbabwe",
+"Zimbabwe",
+0.006790246913 
+],
+[
+ "South Sudan",
+"South Sudan",
+0.02130856635 
+],
+[
+ "Southern Africa",
+"Southern Africa",
+0.08348370753 
+],
+[
+ "Tajikistan",
+"Tajikistan",
+0.01207712642 
+],
+[
+ "Eastern Asia",
+"Eastern Asia",
+0.2210466943 
+],
+[
+ "Afghanistan",
+"Afghanistan",
+0.008205974069 
+],
+[
+ "Southern Asia",
+"Southern Asia",
+0.03899691611 
+],
+[
+ "West Bank and Gaza Strip",
+"West Bank and Gaza Strip",
+0.02802690331 
+],
+[
+ "Puerto Rico",
+"Puerto Rico",
+0.2509657282 
+] 
+];
+data.addColumn('string','FAO_Country');
+data.addColumn('string','FAO_Country.1');
+data.addColumn('number','gdp');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartGeoChartID2d7c20844620() {
+var data = gvisDataGeoChartID2d7c20844620();
+var options = {};
+options["width"] = [556];
+options["height"] = [347];
+
+
+    chartGeoChartID2d7c20844620 = new google.visualization.ChartWrapper({
+    dataTable: data,       
+    chartType: 'GeoChart',
+    containerId: 'GeoChartID2d7c20844620',
+    options: options
+    });
+    chartGeoChartID2d7c20844620.draw();
+    
+
+}
+
+  function openEditorGeoChartID2d7c20844620() {
+  var editor = new google.visualization.ChartEditor();
+  google.visualization.events.addListener(editor, 'ok',
+  function() { 
+  chartGeoChartID2d7c20844620 = editor.getChartWrapper();  
+  chartGeoChartID2d7c20844620.draw(document.getElementById('GeoChartID2d7c20844620')); 
+  }); 
+  editor.openDialog(chartGeoChartID2d7c20844620);
+  }
+    
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "charteditor";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartGeoChartID2d7c20844620);
+})();
+function displayChartGeoChartID2d7c20844620() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+ 
+<!-- jsChart -->  
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartGeoChartID2d7c20844620"></script>
+ 
+<!-- divChart -->
+<input type='button' onclick='openEditorGeoChartID2d7c20844620()' value='GDP'/>  
+<div id="GeoChartID2d7c20844620" 
+  style="width: 556; height: 347;">
+</div>

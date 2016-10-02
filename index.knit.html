@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Mariculture</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Mariculture</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Mariculture</h1>
+
+</div>
+
+
+<div id="maping-mariculture-variables" class="section level2">
+<h2>Maping mariculture variables</h2>
+<pre><code>## Creating a generic function for &#39;toJSON&#39; from package &#39;jsonlite&#39; in package &#39;googleVis&#39;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(<span class="st">&quot;~/KUNI/KUNI-Mariculture.github.io&quot;</span>)
+
+<span class="co">#read cvs always as read_csv (instead of read.csv) to get a tibble, it keep the data without factors</span>
+
+x &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file=</span><span class="st">&#39;data_normalized_092616.csv&#39;</span>)</code></pre></div>
+<pre><code>## Warning: Missing column names filled in: &#39;X1&#39; [1]</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   .default = col_double(),
+##   X1 = col_integer(),
+##   country = col_character(),
+##   year = col_integer()
+## )</code></pre>
+<pre><code>## See spec(...) for full column specifications.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#This is the file with the matching column &quot;FAO_Country&quot;</span>
+
+conversion &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file=</span><span class="st">&quot;CountryConversion.csv&quot;</span>)</code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   ISO3 = col_character(),
+##   ISO2 = col_character(),
+##   ISO_Numeric = col_integer(),
+##   FAO_Country = col_character(),
+##   PythonOutput = col_character(),
+##   FAO_Region = col_character(),
+##   IUCN_Region = col_character(),
+##   Continent_Former_Republics_Excluded = col_character(),
+##   CIA_Name = col_character(),
+##   World_Bank_Country = col_character()
+## )</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Fix names to common:</span>
+
+<span class="co"># have to make sure country names line up</span>
+<span class="co">#PD_names &lt;- select(PD,country) %&gt;% rename(PDname=country) %&gt;% arrange(PDname) %&gt;% distinct()</span>
+<span class="co">#write.csv(PD_names,file=paste0(W_D,&quot;/data/nameconversion/PD_names.csv&quot;),row.names=F)</span>
+<span class="co">#names_conv &lt;- read.csv(paste0(W_D,&quot;/data/nameconversion/name_conversion.csv&quot;),stringsAsFactors = F)</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Geo chart</span>
+
+x2 &lt;-<span class="st"> </span>x %&gt;%<span class="st"> </span>
+<span class="st">   </span><span class="kw">filter</span>(!<span class="kw">is.na</span>(gdp)) %&gt;%
+<span class="st">  </span><span class="kw">rename</span>(<span class="dt">FAO_Country=</span>country) %&gt;%<span class="st">             </span><span class="co">#rename match column FAO_Country</span>
+<span class="st">  </span><span class="kw">left_join</span>(                                  <span class="co">#joining harvest_countries with conversion data </span>
+    conversion, 
+    <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;FAO_Country&quot;</span>)) %&gt;%
+<span class="st">    </span><span class="kw">select</span>(FAO_Country, gdp)
+
+
+  <span class="co">#group_by(FAO_Country) %&gt;%                        #grouping by country</span>
+   <span class="co">#summarise(</span>
+    <span class="co"># harvest = round(sum(value),digits=1), n_species = n()) #getting sum per country and n species harvested</span>
+
+<span class="co"># Plot countries</span>
+<span class="co">#install.packages(&quot;googleVis&quot;)</span>
+<span class="kw">suppressWarnings</span>(<span class="kw">suppressMessages</span>(<span class="kw">library</span>(googleVis))) 
+
+#### Create a geo chart
+<span class="co">#Q.balance in all countries</span>
+G1 &lt;-<span class="st"> </span><span class="kw">gvisGeoChart</span>(x2, <span class="st">&quot;FAO_Country&quot;</span>, <span class="st">&quot;gdp&quot;</span>, <span class="dt">hovervar=</span><span class="st">&quot;FAO_Country&quot;</span>,
+                <span class="dt">options=</span><span class="kw">list</span>(<span class="dt">gvis.editor=</span><span class="st">&quot;S&amp;P&quot;</span>))
+<span class="kw">plot</span>(G1)</code></pre></div>
+<pre><code>## starting httpd help server ...</code></pre>
+<pre><code>##  done</code></pre>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
