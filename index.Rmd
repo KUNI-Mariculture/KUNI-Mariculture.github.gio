@@ -27,6 +27,10 @@ suppressPackageStartupMessages({
 
 ```{r echo = FALSE}
 
+
+mapa <- function(data1, data2){
+  require(shiny)
+  
 shinyApp(
   
   ui <- shinyUI(fluidPage(
@@ -48,12 +52,12 @@ server <- shinyServer(function(input, output) {
     ## Prepare data to be displayed
     #reading data
     
-    x <- read_csv('maps/data/data_normalized_092616.csv')
-    
+    #x <- read_csv('maps/data/data_normalized_092616.csv')
+     x <- data1
     #This is the file with the matching column "FAO_Country"
     
-    conversion <- read_csv('maps/data/CountryConversion.csv')
-    
+    #conversion <- read_csv('maps/data/CountryConversion.csv')
+    conversion <- data2
     gdp <- x %>% 
       filter(!is.na(gdp)) %>%
       rename(FAO_Country=country) %>%        #rename match column FAO_Country
@@ -74,19 +78,10 @@ server <- shinyServer(function(input, output) {
 
  options = list(height = 500)
 )
+} ## <- the function ends!!
 
-```
+## And now we call it
 
-
-
-```{r, echo = FALSE}
-
-#shinyAppDir
-shinyAppDir("~/KUNI/KUNI-Mariculture.github.io/maps",
-  options=list(
-    width="100%", height=550
-  )
-) 
-```
-
-
+data1 <- read_csv('maps/data/data_normalized_092616.csv')
+data2 <- read_csv('maps/data/CountryConversion.csv')
+mapa(data1 = data1, data2 = data2)
