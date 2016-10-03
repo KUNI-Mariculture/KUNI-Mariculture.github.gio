@@ -29,7 +29,7 @@ suppressPackageStartupMessages({
 ```{r echo = FALSE}
 require(shiny)
 
-mapa <- function(data1, FAO_Country, gTitle = "Mariculture 2011", variable = "GDP"){
+mapa <- function(variable, FAO_Country, gTitle = "Mariculture 2011", var = "GDP"){
   require(shiny)
   
 shinyApp(
@@ -50,11 +50,11 @@ server <- shinyServer(function(input, output) {
   
   output$gvis=renderGvis({
     
-    temp <- data.frame(data = data1, FAO_Country = FAO_Country) 
+    temp <- data.frame(data = variable, FAO_Country = FAO_Country) 
     # Plot countries
     
     gvisGeoChart(temp, "FAO_Country", "data", hovervar="FAO_Country",
-                 options=list(gvis.editor=variable, colorAxis="{colors:['#FFFFFF', '#0000FF']}"))
+                 options=list(gvis.editor=var, colorAxis="{colors:['#FFFFFF', '#0000FF']}"))
     
     
   })
@@ -71,99 +71,64 @@ server <- shinyServer(function(input, output) {
 
 data1 <- read_csv('maps/data/data_normalized_092616.csv')
 data2 <- read_csv('maps/data/CountryConversion.csv')
-data3 <- merge(x = data1, y=data2, by.x = c("country"), by.y=c("FAO_Country"))
-data3 <- data3[!is.na(data3$gdp),]
-data3 <- data3[!is.na(data3$Q.balance),]
-data3 <- data3[!is.na(data3$UV.balance),]
-data3 <- data3[!is.na(data3$prod_ratio),]
-data3 <- data3[!is.na(data3$energy_adequacy),]
-data3 <- data3[!is.na(data3$polyunsatFA_percentseafood),]
-data3 <- data3[!is.na(data3$calories_percentseafood),]
-data3 <- data3[!is.na(data3$protein_percentseafood),]
-data3 <- data3[!is.na(data3$vitamins_all),]
-data3 <- data3[!is.na(data3$native),]
-data3 <- data3[!is.na(data3$fishmeal),]
-data3 <- data3[!is.na(data3$habitat),]
-data3 <- data3[!is.na(data3$spp_farmed),]
+
+data3 <- data1 %>% 
+            rename(FAO_Country=country) %>%        #rename match column FAO_Country
+            left_join(                             #joining normalizaed data with conversion by country
+              data2, 
+              by = c("FAO_Country")) 
 
 #gdp
-gdp <- data3$gdp
-FAO_Country <- data3$country
-
-mapa(data1 = gdp, FAO_Country = FAO_Country, gTitle = "GDP")
+data4 <- data3[!is.na(data3$gdp),]
+mapa(variable = data4$gdp, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "GDP")
 
 #Q.balance
-Q.balance <- data3$Q.balance
-FAO_Country <- data3$country
-
-mapa(data1 = Q.balance, FAO_Country = FAO_Country, gTitle = "Q Balance", variable = "Q balance")
+data4 <- data3[!is.na(data3$gdp),]
+mapa(variable = data4$Q.balance, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "Q.balance")
 
 #UV.balance
-UV.balance <- data3$UV.balance
-FAO_Country <- data3$country
-
-mapa(data1 = UV.balance, FAO_Country = FAO_Country, gTitle = "UV Balance", variable = "UV balance")
+data4 <- data3[!is.na(data3$UV.balance),]
+mapa(variable = data4$UV.balance, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "UV.balance")
 
 #prod_ratio
-prod_ratio <- data3$prod_ratio
-FAO_Country <- data3$country
-
-mapa(data1 = prod_ratio, FAO_Country = FAO_Country, gTitle = "prod_ratio", variable = "prod_ratio")
+data4 <- data3[!is.na(data3$prod_ratio),]
+mapa(variable = data4$prod_ratio, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "prod_ratio")
 
 #energy_adequacy
-energy_adequacy <- data3$energy_adequacy
-FAO_Country <- data3$country
-
-mapa(data1 = energy_adequacy, FAO_Country = FAO_Country, gTitle = "energy_adequacy", variable = "energy_adequacy")
-
+data4 <- data3[!is.na(data3$energy_adequacy),]
+mapa(variable = data4$energy_adequacy, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "energy_adequacy")
 
 #polyunsatFA_percentseafood
-polyunsatFA_percentseafood <- data3$polyunsatFA_percentseafood
-FAO_Country <- data3$country
-
-mapa(data1 = polyunsatFA_percentseafood, FAO_Country = FAO_Country, gTitle = "polyunsatFA_percentseafood", variable = "polyunsatFA_percentseafood")
+data4 <- data3[!is.na(data3$polyunsatFA_percentseafood),]
+mapa(variable = data4$polyunsatFA_percentseafood, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "polyunsatFA_percentseafood")
 
 #calories_percentseafood
-calories_percentseafood <- data3$calories_percentseafood
-FAO_Country <- data3$country
-
-mapa(data1 = calories_percentseafood, FAO_Country = FAO_Country, gTitle = "calories_percentseafood", variable = "calories_percentseafood")
+data4 <- data3[!is.na(data3$calories_percentseafood),]
+mapa(variable = data4$calories_percentseafood, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "calories_percentseafood")
 
 #protein_percentseafood
-protein_percentseafood <- data3$protein_percentseafood
-FAO_Country <- data3$country
-
-mapa(data1 = protein_percentseafood, FAO_Country = FAO_Country, gTitle = "protein_percentseafood", variable = "protein_percentseafood")
+data4 <- data3[!is.na(data3$protein_percentseafood),]
+mapa(variable = data4$protein_percentseafood, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "protein_percentseafood")
 
 #vitamins_all
-vitamins_all <- data3$vitamins_all
-FAO_Country <- data3$country
-
-mapa(data1 = vitamins_all, FAO_Country = FAO_Country, gTitle = "vitamins_all", variable = "vitamins_all")
+data4 <- data3[!is.na(data3$vitamins_all),]
+mapa(variable = data4$vitamins_all, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "vitamins_all")
 
 #native
-native <- data3$native
-FAO_Country <- data3$country
-
-mapa(data1 = native, FAO_Country = FAO_Country, gTitle = "native", variable = "native")
+data4 <- data3[!is.na(data3$native),]
+mapa(variable = data4$native, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "native")
 
 #fishmeal
-fishmeal <- data3$fishmeal
-FAO_Country <- data3$country
-
-mapa(data1 = fishmeal, FAO_Country = FAO_Country, gTitle = "fishmeal", variable = "fishmeal")
+data4 <- data3[!is.na(data3$fishmeal),]
+mapa(variable = data4$fishmeal, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "fishmeal")
 
 #habitat
-habitat <- data3$habitat
-FAO_Country <- data3$country
-
-mapa(data1 = habitat, FAO_Country = FAO_Country, gTitle = "habitat", variable = "habitat")
+data4 <- data3[!is.na(data3$habitat),]
+mapa(variable = data4$habitat, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "habitat")
 
 #spp_farmed
-spp_farmed <- data3$spp_farmed
-FAO_Country <- data3$country
-
-mapa(data1 = spp_farmed, FAO_Country = FAO_Country, gTitle = "spp_farmed", variable = "spp_farmed")
+data4 <- data3[!is.na(data3$spp_farmed),]
+mapa(variable = data4$spp_farmed, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "spp_farmed")
 
 
 ```
