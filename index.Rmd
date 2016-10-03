@@ -77,53 +77,7 @@ data3 <- merge(y = data1, x=data2, by.y = c("country"), by.x=c("FAO_Country"))
 data4 <- data3[!is.na(data3$gdp),]
 mapa(variable = data4$gdp, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "GDP")
 
-#Q.balance
-data4 <- data3[!is.na(data3$Q.balance),]
-mapa(variable = data4$Q.balance, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "Q.balance")
 
-#UV.balance
-data4 <- data3[!is.na(data3$UV.balance),]
-mapa(variable = data4$UV.balance, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "UV.balance")
-
-#prod_ratio
-data4 <- data3[!is.na(data3$prod_ratio),]
-mapa(variable = data4$prod_ratio, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "prod_ratio")
-
-#energy_adequacy
-data4 <- data3[!is.na(data3$energy_adequacy),]
-mapa(variable = data4$energy_adequacy, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "energy_adequacy")
-
-#polyunsatFA_percentseafood
-data4 <- data3[!is.na(data3$polyunsatFA_percentseafood),]
-mapa(variable = data4$polyunsatFA_percentseafood, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "polyunsatFA_percentseafood")
-
-#calories_percentseafood
-data4 <- data3[!is.na(data3$calories_percentseafood),]
-mapa(variable = data4$calories_percentseafood, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "calories_percentseafood")
-
-#protein_percentseafood
-data4 <- data3[!is.na(data3$protein_percentseafood),]
-mapa(variable = data4$protein_percentseafood, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "protein_percentseafood")
-
-#vitamins_all
-data4 <- data3[!is.na(data3$vitamins_all),]
-mapa(variable = data4$vitamins_all, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "vitamins_all")
-
-#native
-data4 <- data3[!is.na(data3$native),]
-mapa(variable = data4$native, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "native")
-
-#fishmeal
-data4 <- data3[!is.na(data3$fishmeal),]
-mapa(variable = data4$fishmeal, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "fishmeal")
-
-#habitat
-data4 <- data3[!is.na(data3$habitat),]
-mapa(variable = data4$habitat, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "habitat")
-
-#spp_farmed
-data4 <- data3[!is.na(data3$spp_farmed),]
-mapa(variable = data4$spp_farmed, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "spp_farmed")
 
 
 ```
