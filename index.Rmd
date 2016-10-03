@@ -69,8 +69,8 @@ server <- shinyServer(function(input, output) {
 
 ```{r echo = FALSE, message=FALSE}
 
-data1 <- read_csv('maps/data/data_normalized_092616.csv')
-data2 <- read_csv('maps/data/CountryConversion.csv')
+data1 <- read.csv('maps/data/data_normalized_092616.csv')
+data2 <- read.csv('maps/data/CountryConversion.csv')
 data3 <- merge(y = data1, x=data2, by.y = c("country"), by.x=c("FAO_Country"))
 
 #gdp
