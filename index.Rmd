@@ -71,19 +71,14 @@ server <- shinyServer(function(input, output) {
 
 data1 <- read_csv('maps/data/data_normalized_092616.csv')
 data2 <- read_csv('maps/data/CountryConversion.csv')
-
-data3 <- data1 %>% 
-            rename(FAO_Country=country) %>%        #rename match column FAO_Country
-            left_join(                             #joining normalizaed data with conversion by country
-              data2, 
-              by = c("FAO_Country")) 
+data3 <- merge(y = data1, x=data2, by.y = c("country"), by.x=c("FAO_Country"))
 
 #gdp
 data4 <- data3[!is.na(data3$gdp),]
 mapa(variable = data4$gdp, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "GDP")
 
 #Q.balance
-data4 <- data3[!is.na(data3$gdp),]
+data4 <- data3[!is.na(data3$Q.balance),]
 mapa(variable = data4$Q.balance, FAO_Country = data4$FAO_Country, gTitle = "Mariculture 2011", var = "Q.balance")
 
 #UV.balance
