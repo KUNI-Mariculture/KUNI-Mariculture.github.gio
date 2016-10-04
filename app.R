@@ -29,6 +29,11 @@ shinyApp(
     # Choose variable
     selectInput("variable",label="Choose Variable",choices=vars),
     
+    # Choose Region
+    selectInput("region",label="Region",choices=c("World"="world","Africa"="002","Europe"="150","North America"="021",
+                                                     "Caribbean"="029","Central America"="013","South America"="005",
+                                                     "Asia"="142","Southeast Asia"="035","Oceania"="009")),
+    
     # Show a plot of the generated distribution
     mainPanel(
       htmlOutput("gvis"),
@@ -51,7 +56,8 @@ shinyApp(
       Sys.sleep(0.3)
       
       gvisGeoChart(dat, "gVisname", variable(), hovervar="gVisname",
-                   options=list(colorAxis="{colors:['#FFFFFF', '#0000FF']}",width=1500,height=500))
+                   options=list(colorAxis="{colors:['#F7FCFD', '#6E016B']}",
+                                region=input$region,width=1500,height=500))
     })
 
   })
