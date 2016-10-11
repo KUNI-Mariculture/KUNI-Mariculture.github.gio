@@ -1,5 +1,5 @@
 ---
-title: "Mariculture"
+title: "Maps of Normalized Variables"
 output:
   html_document:
     theme: united

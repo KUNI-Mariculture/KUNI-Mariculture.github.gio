@@ -2,8 +2,10 @@ name: "Mariculture"
 navbar:
   title: "Mariculture"
   left:
-    - text: "Home"
+    - text: "Normalized Data"
       href: index.html
+    - text: "Quantile Data"
+      href: quant.html
     - text: "About"
       href: about.html
 output_dir: "."
