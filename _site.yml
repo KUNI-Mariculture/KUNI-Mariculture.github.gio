@@ -5,7 +5,7 @@ navbar:
     - text: "Normalized Data"
       href: index.html
     - text: "Quantile Data"
-      href: quant.html
+      href: quantiles.html
     - text: "About"
       href: about.html
 output_dir: "."

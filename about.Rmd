@@ -1,5 +1,10 @@
 ---
-title: "Balancing economics with environmental and human health in the development of mariculture. "
+title: "Balancing economics with environmental and human health in the development of mariculture."
+output:
+  html_document:
+    theme: united
+    highlight: tango
+    runtime: shiny
 ---
 
 Kuni Fellowship Proposal

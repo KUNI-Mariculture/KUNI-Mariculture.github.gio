@@ -7,8 +7,5 @@ output:
     runtime: shiny
 ---
 
-## Mapping mariculture variables 2011
-
 <iframe src="https://owenrliu.shinyapps.io/kuni_vis_1/" style="border: black; width: 1500px; height: 900px"></iframe> 
 
-```

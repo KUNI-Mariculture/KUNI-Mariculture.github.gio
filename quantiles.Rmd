@@ -1,5 +1,10 @@
 ---
 title: "Maps of Variables in 5 Quantiles"
+output:
+  html_document:
+    theme: united
+    highlight: tango
+    runtime: shiny
 ---
 
 <iframe src="https://owenrliu.shinyapps.io/quantile/" style="border: black; width: 1500px; height: 900px"></iframe> 
