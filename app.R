@@ -8,15 +8,22 @@ suppressPackageStartupMessages({
   library(DT)
 })
 
-data1 <- read.csv('data_normalized_101116.csv',stringsAsFactors = F)
+data1 <- read.csv('data_normalized_101816.csv',stringsAsFactors = F)
 data2 <- read.csv('gVis_name_conversion.csv',stringsAsFactors = F)
 data3 <- data1 %>% left_join(data2,by=c("country"="MASTER")) %>% 
-  filter(gVisname!="") %>% distinct(gVisname,.keep_all=T) %>% select(-X)
+  filter(gVisname!="") %>% distinct(gVisname,.keep_all=T) %>% 
+  select(-X,-tot_value,-population)
 
-vars <- names(data3)[3:27]
-names(vars) <- c("Trade Balance (Q)","Trade Balance (V)", "Energy Adequacy","GDP","Fatty Acids","Calories","Protein",
-                 "Vitamin A","Thiamin","Niacin","Riboflavin","B6","Iron","Calcium","Zinc","Native","Fishmeal","Habitat",
-                 "Species Farmed","Production Ratio","All Vitamins","All Trade","All FS","All Nutri","All Ecol")
+vars <- names(data3)[3:42]
+names(vars) <- c("Trade Balance (Q)","Trade Balance (V)", "Energy Adequacy","GDP",
+                 "Fatty Acids from Seafood","Calories from Seafood","Protein from Seafood",
+                 "Vitamin A from Seafood","Thiamin from Seafood","Niacin from Seafood",
+                 "Riboflavin from Seafood","B6 from Seafood","Iron from Seafood","Calcium from Seafood",
+                 "Zinc from Seafood","Native","Fishmeal","Habitat",
+                 "Species Farmed","Production Ratio","Calories","Protein","Fat","Vitamin A",
+                 "Calcium","Iron","Zinc","Thiamin","Riboflavin","Niacin","B6","Magnesium","Fatty Acids",
+                 "Aquaculture as Percent of GDP",
+                 "All Vitamins","All Trade","All FS","All Reliance","All Nutrition","All Ecol")
 
 data4 <- data3 %>% select(gVisname,one_of(vars))
 

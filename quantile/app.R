@@ -8,20 +8,30 @@ suppressPackageStartupMessages({
   library(DT)
 })
 
-data1 <- read.csv('data/data_quantized_101116.csv',stringsAsFactors = F)
+data1 <- read.csv('data/data_quantized_101716.csv',stringsAsFactors = F)
 data2 <- read.csv('data/gVis_name_conversion.csv',stringsAsFactors = F)
 data3 <- data1 %>% left_join(data2,by=c("country"="MASTER")) %>% 
   filter(gVisname!="") %>% distinct(gVisname,.keep_all=T) %>% select(-X)
 
-vars <- names(data3)[3:22]
-names(vars) <- c("Trade Balance (Q)","Trade Balance (V)", "Energy Adequacy","GDP","Fatty Acids","Calories","Protein",
-                 "Vitamin A","Thiamin","Niacin","Riboflavin","B6","Iron","Calcium","Zinc","Native","Fishmeal","Habitat",
-                 "Species Farmed","Production Ratio")
-quantvars <- names(data3)[c(23:48)]
-names(quantvars) <- c("Trade Balance (Q)","Trade Balance (V)", "Production Ratio","Species Farmed",
-                      "Energy Adequacy","GDP","Vitamin A","Thiamin","Niacin","Riboflavin","B6",
-                      "Iron","Calcium","Zinc","All Vitamins","Fatty Acids","Calories","Protein",
-                      "Native","Fishmeal","Habitat","All Trade","All FS","All Nutri","All Ecol","Total Score")
+vars <- names(data3)[3:36]
+names(vars) <- c("Trade Balance (Q)","Trade Balance (V)", "Energy Adequacy","GDP","Calories","Protein","Fat","Vitamin A",
+                 "Calcium","Iron","Zinc","Thiamin","Riboflavin","Niacin","B6","Magnesium","Fatty Acids",
+                 "Fatty Acids from Seafood","Calories from Seafood","Protein from Seafood",
+                 "Vitamin A from Seafood","Thiamin from Seafood","Niacin from Seafood",
+                 "Riboflavin from Seafood","B6 from Seafood","Iron from Seafood","Calcium from Seafood",
+                 "Zinc from Seafood","Native","Fishmeal","Habitat",
+                 "Species Farmed","Production Ratio","Aquaculture as Percent of GDP")
+quantvars <- names(data3)[c(37:77)]
+names(quantvars) <- c("Trade Balance (Q)","Trade Balance (V)","Production Ratio","Species Farmed",
+                      "Energy Adequacy","GDP","Calories",
+                      "Protein","Fat","Vitamin A",
+                      "Calcium","Iron","Zinc","Thiamin","Riboflavin","Niacin","B6","Magnesium","Fatty Acids",
+                      "Fatty Acids from Seafood","Calories from Seafood","Protein from Seafood",
+                      "Vitamin A from Seafood","Thiamin from Seafood","Niacin from Seafood",
+                      "Riboflavin from Seafood","B6 from Seafood","Iron from Seafood","Calcium from Seafood",
+                      "Zinc from Seafood","All Vitamins","Native","Fishmeal","Habitat",
+                      "Aquaculture as Percent of GDP",
+                      "All Trade","All FS","All Reliance","All Nutri","All Ecol","Total Score")
 
 data4 <- data3 %>% select(gVisname,one_of(vars),one_of(quantvars))
 
