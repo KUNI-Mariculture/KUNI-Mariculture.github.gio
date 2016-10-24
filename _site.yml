@@ -1,11 +1,9 @@
-name: "Mariculture"
+name: "The Global Opportunity for Mariculture Development to Tackle Malnutrition"
 navbar:
-  title: "Mariculture"
+  title: "Mariculture Opportunity"
   left:
-    - text: "Normalized Data"
+    - text: "Visualization"
       href: index.html
-    - text: "Quantile Data"
-      href: quantiles.html
-    - text: "About"
+    - text: "About the Project"
       href: about.html
 output_dir: "."

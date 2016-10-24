@@ -1,5 +1,5 @@
 ---
-title: "Balancing economics with environmental and human health in the development of mariculture."
+title: "Project Description"
 output:
   html_document:
     theme: united
@@ -7,14 +7,15 @@ output:
     runtime: shiny
 ---
 
-Kuni Fellowship Proposal
+Kuni Fellowship Project
+
+Bren School of Environmental Science and Management, University of California, Santa Barbara
 
 Group members: Patricia Faundez-Baez, Owen Liu, Renato Molina, Molly Wilson
 
 Faculty mentor: Ben Halpern
 
-Research Questions: What are the economic incentives, environmental considerations, and human nutrition values driving the choice and production of maricultured species in the largest producer countries? 
-Are there tradeoffs in mariculture production between profitability and environmental and human health?
-Are there species currently not farmed that may better balance these tradeoffs than those currently produced?
-Are there lessons arising from these tradeoffs that are relevant to other nations currently in the nascent stages of aquaculture development?
+### Research Question: 
+#### Where are there opportunities for mariculture development to contribute to human health?
 
+This visualization represents a collection of recent economic and nutritional information. You can explore each variable separately, and then the variables at the end of the drop-down menu represent combined scores. A country's Total Mariculture Opportunity Score is based on its combined economic and nutritional opportunities, and the country's reliance on seafood for essential nutrients.

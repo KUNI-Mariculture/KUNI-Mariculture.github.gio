@@ -8,22 +8,17 @@ suppressPackageStartupMessages({
   library(DT)
 })
 
-data1 <- read.csv('data_normalized_101816.csv',stringsAsFactors = F)
+data1 <- read.csv('mariculture_opportunity_metrics_10.23.16.csv',stringsAsFactors = F)
 data2 <- read.csv('gVis_name_conversion.csv',stringsAsFactors = F)
 data3 <- data1 %>% left_join(data2,by=c("country"="MASTER")) %>% 
-  filter(gVisname!="") %>% distinct(gVisname,.keep_all=T) %>% 
-  select(-X,-tot_value,-population)
+  filter(gVisname!="") %>% distinct(gVisname,.keep_all=T)
 
-vars <- names(data3)[3:42]
-names(vars) <- c("Trade Balance (Q)","Trade Balance (V)", "Energy Adequacy","GDP",
-                 "Fatty Acids from Seafood","Calories from Seafood","Protein from Seafood",
-                 "Vitamin A from Seafood","Thiamin from Seafood","Niacin from Seafood",
-                 "Riboflavin from Seafood","B6 from Seafood","Iron from Seafood","Calcium from Seafood",
-                 "Zinc from Seafood","Native","Fishmeal","Habitat",
-                 "Species Farmed","Production Ratio","Calories","Protein","Fat","Vitamin A",
-                 "Calcium","Iron","Zinc","Thiamin","Riboflavin","Niacin","B6","Magnesium","Fatty Acids",
-                 "Aquaculture as Percent of GDP",
-                 "All Vitamins","All Trade","All FS","All Reliance","All Nutrition","All Ecol")
+vars <- names(data3)[c(19:38,41)]
+names(vars) <- c("Trade Balance (Q)","Trade Balance (V)","Production Diversity", "Production Ratio",
+                 "Energy Adequacy","Fatty Acids","Calories","Protein","Vitamin A","Iron","Zinc",
+                 "Calories from Seafood","Protein from Seafood","Fatty Acids from Seafood","Vitamin A from Seafood",
+                 "Zinc from Seafood","Iron from Seafood","Reliance Score","Economic Score","Nutrition Score",
+                 "Total Mariculture Opportunity Score")
 
 data4 <- data3 %>% select(gVisname,one_of(vars))
 
@@ -49,7 +44,7 @@ shinyApp(
                 )
         ),
         column(width=4,
-               dataTableOutput("top10")
+               dataTableOutput("top5")
                ),
         column(width=4,
                 # histogram of data in question
@@ -70,6 +65,7 @@ shinyApp(
     df <- reactive({
       df <- as.data.frame(data4[,c("gVisname",variable())])
       names(df) <- c("Country","Score")
+      df$Score <- round(df$Score,2)
       df
     })
     
@@ -83,15 +79,15 @@ shinyApp(
       Sys.sleep(0.3)
       
       gvisGeoChart(dat, "gVisname", variable(), hovervar="gVisname",
-                   options=list(colorAxis="{minValue: 0, maxValue:1, colors: ['#CD8162', 'white','#8FBC8F']}",
+                   options=list(colorAxis="{minValue: 0, maxValue:1, colors: ['#E6F4E9','#508C5E','#086D30']}",
                                 region=input$region,width=1700,height=700,
                                 datalessRegionColor="#B8B8B8",defaultColor="#B8B8B8"))
     })
     
-    output$top10 <- renderDataTable(df(),options=list(pageLength=5))
+    output$top5 <- renderDataTable(df(),options=list(pageLength=5))
     
     output$varhist <- renderPlot({
-      hist(data4[,variable()],main="Distribution of Variable",xlim=c(0,1),xlab="value",ylab="frequency",ylim=c(0,100))
+      hist(data4[,variable()],main="Distribution of Normalized Variable",xlim=c(0,1),xlab="value",ylab="frequency",ylim=c(0,70))
     })
 
   })
