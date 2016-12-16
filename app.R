@@ -79,7 +79,7 @@ shinyApp(
       Sys.sleep(0.3)
       
       gvisGeoChart(dat, "gVisname", variable(), hovervar="gVisname",
-                   options=list(colorAxis="{minValue: 0, maxValue:1, colors: ['#E6F4E9','#508C5E','#086D30']}",
+                   options=list(colorAxis="{minValue: 0, maxValue:1, colors: ['#4A6FE3', '#E2E2E2','#D33F6A']}",
                                 region=input$region,width=1700,height=700,
                                 datalessRegionColor="#B8B8B8",defaultColor="#B8B8B8"))
     })
