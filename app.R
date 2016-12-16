@@ -8,7 +8,7 @@ suppressPackageStartupMessages({
   library(DT)
 })
 
-data1 <- read.csv('mariculture_opportunity_metrics_10.23.16.csv',stringsAsFactors = F)
+data1 <- read.csv('mariculture_opportunity_metrics_12.16.16.csv',stringsAsFactors = F)
 data2 <- read.csv('gVis_name_conversion.csv',stringsAsFactors = F)
 data3 <- data1 %>% left_join(data2,by=c("country"="MASTER")) %>% 
   filter(gVisname!="") %>% distinct(gVisname,.keep_all=T)
