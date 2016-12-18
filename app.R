@@ -24,36 +24,38 @@ data4 <- data3 %>% select(gVisname,one_of(vars))
 
 shinyApp(
   
-  ui <- shinyUI(fluidPage(
+  ui <- shinyUI(fixedPage(
     verticalLayout(
       # Application title
       titlePanel(
         textOutput(outputId = "title")
       ),
-      fluidRow(
-        column(width=4,
+      fixedRow(
+        column(width = 3,  
                wellPanel(
-                  # Choose variable
-                  selectInput("variable",label="Choose Variable",choices=vars),
-                  
-                  # Choose Region
-                  selectInput("region",label="Region",choices=c("World"="world","Africa"="002","Europe"="150","North America"="021",
-                                                                "Caribbean"="029","Central America"="013","South America"="005",
-                                                                "Asia"="142","Southeast Asia"="035","South Asia"="034","Oceania"="009","Melanesia"="054",
-                                                                "Micronesia"="057","Polynesia"="061"))
-                )
-        ),
-        column(width=4,
+                 # Choose variable
+               selectInput("variable",label="Choose Variable",choices=vars),
+               
+               # Choose Region
+               selectInput("region",label="Region",choices=c("World"="world","Africa"="002","Europe"="150","North America"="021",
+                                                             "Caribbean"="029","Central America"="013","South America"="005",
+                                                             "Asia"="142","Southeast Asia"="035","South Asia"="034","Oceania"="009","Melanesia"="054",
+                                                             "Micronesia"="057","Polynesia"="061"))
+        )),
+        # Show a plot of the generated distribution
+        column(width = 7, 'YEAR 2011', htmlOutput("gvis")) 
+      ),
+        
+        fixedRow(
+          column(width=4,
                dataTableOutput("top5")
                ),
         column(width=4,
                 # histogram of data in question
-                plotOutput("varhist")
+                 plotOutput("varhist")
+               
               )
-      ),
-      
-      # Show a plot of the generated distribution
-      htmlOutput("gvis")
+      )
       
     )
   )),
@@ -79,8 +81,8 @@ shinyApp(
       Sys.sleep(0.3)
       
       gvisGeoChart(dat, "gVisname", variable(), hovervar="gVisname",
-                   options=list(colorAxis="{minValue: 0, maxValue:1, colors: ['#4A6FE3', '#E2E2E2','#D33F6A']}",
-                                region=input$region,width=1700,height=700,
+                   options=list(colorAxis="{minValue: 0, maxValue:1, colors: ['#E2E2E2', '#4A6FE3', '#D33F6A']}",
+                                region=input$region,width=600,height=300,
                                 datalessRegionColor="#B8B8B8",defaultColor="#B8B8B8"))
     })
     
