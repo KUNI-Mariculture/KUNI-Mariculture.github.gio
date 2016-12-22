@@ -5,7 +5,8 @@ output:
     theme: united
     highlight: tango
     runtime: shiny
+    margin: 0
 ---
 
-<iframe src="https://owenrliu.shinyapps.io/kuni_vis_1/" style="border: black; align:left; margin:0; padding:0; width: 1900px; height: 1000px"></iframe> 
 
+<iframe src="https://owenrliu.shinyapps.io/kuni_vis_1/" style="border: black; align:left; padding: 0; width: 1000px; height: 1000px"></iframe> 
