@@ -8,9 +8,4 @@ output:
     margin: 0
 ---
 
-<<<<<<< HEAD
 <iframe src="https://owenrliu.shinyapps.io/kuni-mariculturegithub/" style="border: black; width: 1500px; height: 900px"></iframe> 
-=======
->>>>>>> 22213dd863a3bef7285a27fb16a9d4151adf363a
-
-<iframe src="https://owenrliu.shinyapps.io/kuni_vis_1/" style="border: black; align:left; padding: 0; width: 1000px; height: 1000px"></iframe> 
