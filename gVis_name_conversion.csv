@@ -31,7 +31,7 @@ Botswana,Botswana
 Brazil,Brazil
 British Indian Ocean Ter,
 British Virgin Islands,
-Brunei,Brunei
+Brunei Darussalam,Brunei
 Bulgaria,Bulgaria
 Burkina Faso,Burkina Faso
 Burundi,Burundi
@@ -39,7 +39,7 @@ Cabo Verde,
 Cambodia,Cambodia
 Cameroon,Cameroon
 Canada,Canada
-,Cape Verde
+Cabo Verde,Cape Verde
 Cayman Islands,
 Central African Republic,Central African Republic
 Chad,Chad
@@ -58,7 +58,7 @@ Costa Rica,Costa Rica
 Cote dIvoire,Cote d'Ivoire
 Croatia,Croatia
 Cote dIvoire,
-Cuba,
+Cuba,Cuba
 Curaçcao,
 Cyprus,Cyprus
 Czech Republic,Czech Republic
@@ -87,7 +87,7 @@ French Guiana,
 French Polynesia,French Polynesia
 French Sountern Terr,French Southern and Antarctic Lands
 Gabon,Gabon
-Gambia,The Gambia
+The Gambia,The Gambia
 Georgia,Georgia
 Germany,Germany
 Ghana,Ghana
@@ -109,7 +109,7 @@ Hungary,Hungary
 Iceland,Iceland
 India,India
 Indonesia,Indonesia
-Iran,
+Iran,Iran
 Iraq,Iraq
 Ireland,Ireland
 Isle of Man,
@@ -225,9 +225,10 @@ Svalbard,
 Swaziland,Swaziland
 Sweden,Sweden
 Switzerland,Switzerland
-Syrian Arab Republic,
+Syrian Arab Republic,Syria
 Taiwan,
 Tajikistan,Tajikistan
+Tanzania,Tanzania
 Thailand,Thailand
 Macedonia,Macedonia (FYROM)
 Timor-Leste,Timor-Leste
@@ -246,6 +247,7 @@ USSR,
 United Arab Emirates,United Arab Emirates
 United Kingdom,United Kingdom
 United Republic of Tanzania,Tanzania
+United States,United States
 United States of America,United States
 United States Virgin Islands,
 ,United States Minor Outlying Islands

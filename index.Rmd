@@ -7,5 +7,5 @@ output:
     runtime: shiny
 ---
 
-<iframe src="https://owenrliu.shinyapps.io/kuni_vis_1/" style="border: black; width: 1500px; height: 900px"></iframe> 
+<iframe src="https://owenrliu.shinyapps.io/kuni-mariculturegithub/" style="border: black; width: 1500px; height: 900px"></iframe> 
 

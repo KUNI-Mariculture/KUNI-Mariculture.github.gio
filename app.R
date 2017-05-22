@@ -8,15 +8,15 @@ suppressPackageStartupMessages({
   library(DT)
 })
 
-data1 <- read.csv('mariculture_opportunity_metrics_12.16.16.csv',stringsAsFactors = F)
+data1 <- read.csv('final_country_scores.csv',stringsAsFactors = F)
 data2 <- read.csv('gVis_name_conversion.csv',stringsAsFactors = F)
-data3 <- data1 %>% left_join(data2,by=c("country"="MASTER")) %>% 
+data3 <- data1 %>% left_join(data2,by=c("country_name"="MASTER")) %>% 
   filter(gVisname!="") %>% distinct(gVisname,.keep_all=T)
 
-vars <- names(data3)[c(19:38,41)]
-names(vars) <- c("Trade Balance (Q)","Trade Balance (V)","Production Diversity", "Production Ratio",
-                 "Energy Adequacy","Fatty Acids","Calories","Protein","Vitamin A","Iron","Zinc",
-                 "Calories from Seafood","Protein from Seafood","Fatty Acids from Seafood","Vitamin A from Seafood",
+vars <- names(data3)[c(38:42,50:61,64:66,68)]
+names(vars) <- c("Production Ratio","Trade Balance (Q)","Trade Balance (V)","Willingness to Pay","GDP per capita",
+                 "Energy Adequacy","Protein","Fatty Acids","Vitamin A","Zinc","Iron","Calories from Seafood",
+                 "Protein from Seafood","Fatty Acids from Seafood","Vitamin A from Seafood",
                  "Zinc from Seafood","Iron from Seafood","Reliance Score","Economic Score","Nutrition Score",
                  "Total Mariculture Opportunity Score")
 
